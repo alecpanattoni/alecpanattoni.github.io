@@ -5,16 +5,16 @@ title: Missingness' Effect on Fairness
 <link rel="stylesheet" href="css/main. css" />
 <div class="blurb">
 	<h1>Evaluating the Effect of Data Missingness on Fairness of Machine Learning Algorithms</h1>
-	<p>Can you guess what my favorite kind of lunch meat is? <a href="https://youtu.be/dQw4w9WgXcQ">Yes, it is baloney</a></p>
+	<p class="text">Can you guess what my favorite kind of lunch meat is? <a href="https://youtu.be/dQw4w9WgXcQ">Yes, it is baloney</a></p>
 
-	<p>Welcome to the website for our project! Here we will be introducing the core ideas of our research project, the motivation behind it, and what work we have done in order to answer the question:
+	<p class="text">Welcome to the website for our project! Here we will be introducing the core ideas of our research project, the motivation behind it, and what work we have done in order to answer the question:
 		Does Data Missingness affect Fairness in Machine Learning?
 	</p>
 
 	<h3>
 		What's Fairness?
 	</h3>
-	<p>
+	<p class="text">
 		Fairness is a degree to which a machine learning algorithm is able to adequately respond to bias present in data. Pretty much all data in the world is biased in some way due to a variety of
 		factors: it may be an issue of data collection, it may be a deliberate decision to bias the data by favoring a certain population, or it might be caused by a confounding factor that is not accounted for.
 		What we care about in our project is something known as Selection Bias: when the data that is present tells a story that is different from the real world situation.
@@ -23,7 +23,7 @@ title: Missingness' Effect on Fairness
 	<h3>
 		How Does Missingness Play Into It?
 	</h3>
-	<p>
+	<p class="text">
 		Missingness is a common occurence in the world of data science, and the term itself refers to a pattern (or lack thereof) of missing observations in the dataset. An example would be 
 		a dataset that contains information on various vehicles registered at a local DMV, and the observations that are missing are some license plate numbers. The fact that there are multiple
 		data points missing and that there might be an underlying pattern constitutes the concept of missingness.<br>
@@ -34,7 +34,7 @@ title: Missingness' Effect on Fairness
 		in a data table). <br>
 
 		The following types are generally identified and these are the ones we focus on in our research:
-		<ul>
+		<ul class="text">
 			<li>
 				Data Missing Completely at Random (MCAR). This type of missingness occurs when there is no pattern to why the data is missing; it is as if the observations are taken out by pure chance.
 				This type of missingness means that we can't establish how and why the data is made missing, so the way it can affect fairness is unpredictable.
@@ -55,7 +55,7 @@ title: Missingness' Effect on Fairness
 				but also another which states whether the person agreed to the survey or not; if the latter states "No", then all other columns will have missing data because the person did not do the survey.
 			</li>
 		</ul>
-	</p>
+	</p class="text">
 
 	<h2>
 		Our Approach to the Question
@@ -64,7 +64,7 @@ title: Missingness' Effect on Fairness
 	<h3>
 		Data
 	</h3>
-	<p>
+	<p class="text">
 		In order to work on our research question, we needed a dataset which could be biased, and also a dataset that contains the specific missingness patterns we are trying to evaluate. As a result,
 		we decided to create a synthetic dataset based on 
 		<a href="https://www.kaggle.com/datasets/asimislam/civilian-complaints-against-nyc-police-officers?select=allegations_20200726939.csv">
