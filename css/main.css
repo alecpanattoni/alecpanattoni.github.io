@@ -22,6 +22,7 @@ a:hover {
 h1 {
     font-size: 3em;
     font-family: 'Roboto', sans-serif;
+    font-weight: 500;
 }
 h2 {
     font-size: 2.5em;
