@@ -11,12 +11,12 @@ title: Missingness' Effect on Fairness
 
 <div class="blurb">
 	<h1>Methods that we used to explore the effect of missingness on fairness</h1>
-	<h2>
-		Replicating Each Type of Missingness
-	</h2>
 	<h3>
-		MCAR: Missing Completely at Random
+		Replicating Each Type of Missingness
 	</h3>
+	<h4>
+		MCAR: Missing Completely at Random
+	</h4>
 	<p>
 		In order to replicate this type of missingness, our mcar function simply takes in a user-input probability parameter,
 		which designates how likely each value in the attribute is to be missing. This is the simplest form of missingness to
@@ -26,13 +26,15 @@ title: Missingness' Effect on Fairness
 		happens for each tuple for the selected attribute.
 	</p>
 		
-	<h3>
+	<h4>
 		NMAR: Not Missing at Random
-	</h3>
+	</h4>
 	<p>
 		In order to generate our NMAR data, we make use of sigmoid function. This is because the sigmoid function conviniently
 		produces a value between 0 and 1 (and therefore can be interpreted as a probability). 
+		<br>
 		<img src="/images/sigmoid.png" alt="sigmoid" width="500" height="500">
+		<br>
 		What happens before this is dependent on the type of the attribute in which missingness will be generated. If the 
 		column is categorical, for each unique categorical value, a random z-score is generated from a normal distribution
 		and put into a sigmoid function. This will produce a probability for each unique value of the column. If the
@@ -42,11 +44,41 @@ title: Missingness' Effect on Fairness
 		multiplied by the generated probability as a way to tune how much missingness is generated. The higher the beta
 		value (between 0 and 1), the more missingness is generated. 
 	</p>
-	<h3>
+	<h4>
 		MAR: Missing at Random
-	</h3>
+	</h4>
 	<p>
 		Our MAR data is generated in a very similar way to our NMAR data. The only difference is that the value of the
 		column that our attribute is dependent on is used rather than the value of the missingness column itself.
+	</p>
+	<h3>
+		Fairness Notions
+	</h3>
+	<h4>
+		Statistical Parity
+	</h4>
+	<p>
+		
+	</p>
+	<h4>
+		Equality of Odds
+	</h4>
+	<p>
+
+	</p>
+	<h4>
+		Equality of Opportunity
+	</h4>
+	<p>
+
+	</p>
+	<h3>
+		Fairness Intervention Technique(s)
+	</h3>
+	<h4>
+		Adversarial Debiasing (Inprocessing)
+	</h4>
+	<p>
+
 	</p>
 </div><!-- /.blurb -->
