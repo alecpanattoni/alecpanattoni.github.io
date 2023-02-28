@@ -32,7 +32,7 @@ title: Missingness' Effect on Fairness
 	<p>
 		In order to generate our NMAR data, we make use of sigmoid function. This is because the sigmoid function conviniently
 		produces a value between 0 and 1 (and therefore can be interpreted as a probability). 
-		<img src="/images/sigmoid.png" alt="sigmoid">
+		<img src="/images/sigmoid.png" alt="sigmoid" width="250" height="250">
 		What happens before this is dependent on the type of the attribute in which missingness will be generated. If the 
 		column is categorical, for each unique categorical value, a random z-score is generated from a normal distribution
 		and put into a sigmoid function. This will produce a probability for each unique value of the column. If the
