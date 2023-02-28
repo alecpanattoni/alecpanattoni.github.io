@@ -58,19 +58,36 @@ title: Missingness' Effect on Fairness
 		Statistical Parity
 	</h4>
 	<p>
-		
-	</p>
-	<h4>
-		Equality of Odds
-	</h4>
-	<p>
+		Statistical parity occurs when the following equation is satisfied:
+		<br>
+		P (R = +|A = a) = P (R = +|A = b)∀a, b ∈ A
+		<br>
+		where A is the set of sensitive characteristics and R is the predictive
+		outcome[1]. In a perfectly fair algorithm, the two sides of the equation are
+		equal; therefore, the closest we get the difference between P (R = +|A = a)
+		and P (R = +|A = b) to 0, the better our intervention technique is at improving
+		fairness.
 
 	</p>
 	<h4>
 		Equality of Opportunity
 	</h4>
 	<p>
-
+		Equality of Opportunity allows for individuals within the "advantaged" group to be
+		given an equal chance of correctly classified. In other words, we want the True
+		Positive Rate to be equal for every attribute in the protected class. Equality of
+		opportunity is a type of fairness where each sample, model should be treated similarly,
+		with no bias or preference, except where particular distinctions can be explicitly
+		justified.
+	</p>
+	<h4>
+		Equality of Odds
+	</h4>
+	<p>
+		Equality of Odds is a much stricter version of equality of opportunity. Instead
+		of using True Positive Rate to be equal in every attributes, it rather takes in
+		the lowest False Negative Rate and uses them as the guide to make all the rate
+		to be equal in all of the attributes. 
 	</p>
 	<h3>
 		Fairness Intervention Technique(s)
