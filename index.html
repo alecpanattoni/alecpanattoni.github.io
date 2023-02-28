@@ -81,7 +81,7 @@ title: Missingness' Effect on Fairness
 		</a>. We used the data because it contains information about the complainants' gender, ethnicity, age, and other attributes that could be discriminated upon by the police department. Therefore, the
 		data might show some biases, and the algorithm that processes this data might pick up on those biases and produce unfair decisions. <br>
 		
-		Our dataset is syntetic because we take the original dataset and 
+		Our dataset is synthetic because we take the original dataset and 
 		simulate our own distribution of missingness. The process by which this works is that we use statistical representations of types of missingness in order to select which observations to "drop" from the dataset.
 		As a result, we end up with a dataset that has certain values missing, and those are determined by a pattern we decide. If you want to know more about how we simulate our dataset, feel free to visit
 		<a href="/methods">Methods In-Depth</a> page.
@@ -91,11 +91,33 @@ title: Missingness' Effect on Fairness
 		Processing and Evaluating Methods
 	</h3>
 
+	<p class="text">
+		After generating our synthetic dataset, we apply the dataset repair in order to approach the biases in the dataset that result from introduced missingness. In order to evaluate bias,
+		we use what is known as fairness notions: mathematical ways of quantifying whether a single group is more preferred than another by the algorithm. The notions that we use are:
+		statistical parity, equality of odds (EOdd), and equality of opportunity (EOpp); we cover the meaning of each fairness notion more in the <a href="/methods.html">relevant methods supbage</a>.<br>
+
+		The dataset repair is essentially reconfiguring the dataset in a way that removes the biased dependencies of values; the algorithm that we use is an in-processing algorithm of Adversarial Debiasing, which we import from the AIF360 package.
+		This package is commonly used for approaches like ours, where we need to make changes to the dataset throughout the application of the algorithm in order to address the biases in the data.<br>
+
+		Adversarial Debiasing is applied to the three datasets with generated missingness (that including MCAR, MAR, and NMAR patterns), as well as the dataset with no missingness whatsoever (i.e. all missing tuples are removed).
+		After Adversarial Debiasing is applied for each dataset, we record the fairness notions in order to see how each type of missingness performed after in-processing.
+
+	</p>
+
 	<h3>
 		Results and Interpretation
 	</h3>
 
+	<p class="text">
+		
+	</p>
+
 	<h3>
 		What We Learned
 	</h3>
+
+	<p class="text">
+		
+
+	</p>
 </div><!-- /.blurb -->
