@@ -86,8 +86,8 @@ title: Missingness' Effect on Fairness
 	<p>
 		Equality of Odds is a much stricter version of equality of opportunity. Instead
 		of using True Positive Rate to be equal in every attributes, it rather takes in
-		the lowest False Negative Rate and uses them as the guide to make all the rate
-		to be equal in all of the attributes. 
+		the lowest False Negative Rate and uses them as the guide to make all the rates
+		equal in all of the attributes. 
 	</p>
 	<h3>
 		Fairness Intervention Technique(s)
@@ -96,6 +96,12 @@ title: Missingness' Effect on Fairness
 		Adversarial Debiasing (Inprocessing)
 	</h4>
 	<p>
-
+		In adversarial debiasing, two models are built within the method. The first is 
+		predicting the target label. The second model is the adversary, which tries to
+		predict, based on the predictions of the first model, what the sensitive attribute
+		is for each tuple. Ideally, this adversarial model shouldn't be able to predict it
+		well. Next, the adversarial model makes modifications to the original model with
+		parameters and weighting that weaken the predictive power of the adversarial model
+		until it cannot predict the protected attributes well.
 	</p>
 </div><!-- /.blurb -->
