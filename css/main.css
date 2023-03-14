@@ -66,4 +66,5 @@ a.button {
     text-decoration: none;
     display: inline-block;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    padding-inline: 5px;
 }
