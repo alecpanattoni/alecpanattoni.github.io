@@ -116,6 +116,18 @@ title: Missingness' Effect on Fairness
 	</h3>
 
 	<p class="text">
+		Throughout our project, we studied the effects of missingness on fairness.
+		<br>
+		A lot of what we learned lies in the definition of missingness, its distribution, and how we can statistically explain and evaluate missingness in the dataset. At the end of the day,
+		missingness is just a statistical distribution of missing values in the dataset; as with any other recognizable pattern in the dataset, it can affect the outcome of the analysis. In our
+		research, we learned about different types of bias and how it is mathetmatically defined; the relationships between sensitive and non-sensitive attributes and the final outcome, as well as
+		the original labels used for training. All these together are linked in a causal graph (Salimi et al., 2019) that showcases the relationships between the attributes. If a sensitive attribute that
+		is proven to be involved in causal relationships with the outcome has noticeable patterns of missing data, then it can severely skew the labels that the algorithm will be predicting.
+		<br>
+		Logically,
+		missingness can be treated like any other data, but the difference in this case is that there is no story that can be told from this "data"; non-missing values are tied to specific outcomes
+		in the real world, while the absence of values does not tell us or the algorithm anything about what is happening. Hence, we needed to see how absent data can affect the algorithm; how will the algorithm
+		learn to predict the outcome if it is missing whole chunks of data that could be crucial to providing accurate and non-biased representation of the target population.
 		
 
 	</p>
