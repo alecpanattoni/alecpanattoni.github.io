@@ -17,7 +17,7 @@ title: Missingness' Effect on Fairness
 	<h4>
 		MCAR: Missing Completely at Random
 	</h4>
-	<p>
+	<p class="text">
 		In order to replicate this type of missingness, our mcar function simply takes in a user-input probability parameter,
 		which designates how likely each value in the attribute is to be missing. This is the simplest form of missingness to
 		reproduce, since missingness is completely at random and not dependent on any particular value. Therefore, we can just
@@ -29,7 +29,7 @@ title: Missingness' Effect on Fairness
 	<h4>
 		NMAR: Not Missing at Random
 	</h4>
-	<p>
+	<p class="text">
 		In order to generate our NMAR data, we make use of sigmoid function. This is because the sigmoid function conviniently
 		produces a value between 0 and 1 (and therefore can be interpreted as a probability). 
 		<br>
@@ -47,7 +47,7 @@ title: Missingness' Effect on Fairness
 	<h4>
 		MAR: Missing at Random
 	</h4>
-	<p>
+	<p class="text">
 		Our MAR data is generated in a very similar way to our NMAR data. The only difference is that the value of the
 		column that our attribute is dependent on is used rather than the value of the missingness column itself.
 	</p>
@@ -57,7 +57,7 @@ title: Missingness' Effect on Fairness
 	<h4>
 		Statistical Parity
 	</h4>
-	<p>
+	<p class="text" >
 		Statistical parity occurs when the following equation is satisfied:
 		<br>
 		P (R = +|A = a) = P (R = +|A = b)∀a, b ∈ A
@@ -72,7 +72,7 @@ title: Missingness' Effect on Fairness
 	<h4>
 		Equality of Opportunity
 	</h4>
-	<p>
+	<p class="text">
 		Equality of Opportunity allows for individuals within the "advantaged" group to be
 		given an equal chance of correctly classified. In other words, we want the True
 		Positive Rate to be equal for every attribute in the protected class. Equality of
@@ -83,7 +83,7 @@ title: Missingness' Effect on Fairness
 	<h4>
 		Equality of Odds
 	</h4>
-	<p>
+	<p class="text">
 		Equality of Odds is a much stricter version of equality of opportunity. Instead
 		of using True Positive Rate to be equal in every attributes, it rather takes in
 		the lowest False Negative Rate and uses them as the guide to make all the rates
@@ -95,7 +95,7 @@ title: Missingness' Effect on Fairness
 	<h4>
 		Adversarial Debiasing (Inprocessing)
 	</h4>
-	<p>
+	<p class="text">
 		In adversarial debiasing, two models are built within the method. The first is 
 		predicting the target label. The second model is the adversary, which tries to
 		predict, based on the predictions of the first model, what the sensitive attribute
