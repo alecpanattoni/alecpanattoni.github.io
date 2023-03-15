@@ -81,8 +81,13 @@ title: Missingness' Effect on Fairness
 		data might show some biases, and the algorithm that processes this data might pick up on those biases and produce unfair decisions. <br>
 		
 		Our dataset is synthetic because we take the original dataset and 
-		simulate our own distribution of missingness. The process by which this works is that we use statistical representations of types of missingness in order to select which observations to "drop" from the dataset.
-		As a result, we end up with a dataset that has certain values missing, and those are determined by a pattern we decide. If you want to know more about how we simulate our dataset, feel free to visit
+		simulate our own distribution of missingness. The process by which this works is that we use statistical representations of types of missingness in order 
+		to select which observations to "drop" from the dataset. As a result, we end up with a dataset that has certain values missing, and those are determined
+		by a pattern we decide. More specifically, the complainant age attribute was chosen to contain missingness. This attribute was chosen for two reasons. 
+		The first is that the chosen missing attribtue must be highly correlated with the chosen sensitive attribute and the label outcome attribute. This is
+		because we don't want to alter the extremely delicate attributes that are the sensitive and label outcome attributes. This is also important because when
+		we synthetically create MAR data, we need our attribute with missingness to produce missingness that makes sense, which would be highly dependent on either
+		the sensitive attribute or the label outcome attribute. If you want to know more about how we simulate our dataset, feel free to visit 
 		<a href="/methods">Methods In-Depth</a> page.
 	</p>
 
