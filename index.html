@@ -81,13 +81,8 @@ title: Missingness' Effect on Fairness
 		data might show some biases, and the algorithm that processes this data might pick up on those biases and produce unfair decisions. <br>
 		
 		Our dataset is synthetic because we take the original dataset and 
-		simulate our own distribution of missingness. The process by which this works is that we use statistical representations of types of missingness in order 
-		to select which observations to "drop" from the dataset. As a result, we end up with a dataset that has certain values missing, and those are determined
-		by a pattern we decide. More specifically, the complainant age attribute was chosen to contain missingness. This attribute was chosen for two reasons. 
-		The first is that the chosen missing attribtue must be highly correlated with the chosen sensitive attribute and the label outcome attribute. This is
-		because we don't want to alter the extremely delicate attributes that are the sensitive and label outcome attributes. This is also important because when
-		we synthetically create MAR data, we need our attribute with missingness to produce missingness that makes sense, which would be highly dependent on either
-		the sensitive attribute or the label outcome attribute. If you want to know more about how we simulate our dataset, feel free to visit
+		simulate our own distribution of missingness. The process by which this works is that we use statistical representations of types of missingness in order to select which observations to "drop" from the dataset.
+		As a result, we end up with a dataset that has certain values missing, and those are determined by a pattern we decide. If you want to know more about how we simulate our dataset, feel free to visit
 		<a href="/methods">Methods In-Depth</a> page.
 	</p>
 
@@ -96,16 +91,34 @@ title: Missingness' Effect on Fairness
 	</h3>
 
 	<p class="text">
-		After generating our synthetic dataset, we apply the dataset repair in order to approach the biases in the dataset that result from introduced missingness. In order to evaluate bias,
-		we use what is known as fairness notions: mathematical ways of quantifying whether a single group is more preferred than another by the algorithm. The notions that we use are:
-		statistical parity, equality of odds (EOdd), and equality of opportunity (EOpp); we cover the meaning of each fairness notion more in the <a href="/methods.html">relevant methods supbage</a>.<br>
-
-		The dataset repair is essentially reconfiguring the dataset in a way that removes the biased dependencies of values; the algorithm that we use is an in-processing algorithm of Adversarial Debiasing, which we import from the AIF360 package.
-		This package is commonly used for approaches like ours, where we need to make changes to the dataset throughout the application of the algorithm in order to address the biases in the data.<br>
-
-		Adversarial Debiasing is applied to the three datasets with generated missingness (that including MCAR, MAR, and NMAR patterns), as well as the dataset with no missingness whatsoever (i.e. all missing tuples are removed).
-		After Adversarial Debiasing is applied for each dataset, we record the fairness notions in order to see how each type of missingness performed after in-processing.
-
+		Missingness in machine learning data sets is common and there are several types of missingness, describing Missing Completely at Random (MCAR), Not Missing at Random (NMAR), and Missing at Random (MAR).
+		
+		MCAR: Missingness of data in MCAR is completely independent of both observed and unobserved data. Suppose X represents a randomized variable and R represents the binary random process which gives information
+		about missingness and non-missingness of data with R=1 (missingness) and R=0 (non-missingness). Joint probability distribution of 𝑋 and 𝑅 as:
+		
+		𝑃 (𝑋 = 𝑥, 𝑅 = 𝑟) = 𝑃(𝑋 = 𝑥 | 𝑅 = 𝑟) 𝑃(𝑅 = 𝑟)
+		
+		NMAR: Missingness of data in NMAR depends upon overlooked values of the unobserved variable and is independent of the observed data set so observed data is not capable to estimate probability distribution.
+		Correlation between observed and missing data can help to estimate conditional distribution. Suppose Y indicates a key variable, R represents the binary random process that gives information about the missingness
+		and non-missingness of Y with R=1 (missingness) and R=0 (non-missingness) and X represents observed variables relating to Y and R. Joint probability distribution of 𝑌, 𝑋, and 𝑅 is given below:
+		
+		𝑃(𝑌 = 𝑦, 𝑋 = 𝑥, 𝑅 = 𝑟) = 𝑃(𝑌 = 𝑦 | 𝑋 = 𝑥, 𝑅 = 𝑟) 𝑃(𝑋 = 𝑥, 𝑅 = 𝑟)
+		
+		Calculated conditional distribution is performed to fill out the missing values in the data set and this method is repeated several times to get an imputed group of the data sets.
+		
+		MAR: Missingness of data in MAR depends upon the variable that is included in a data set. The missingness of the variable is more dependent on the significance of the variable as compared to the variable value.
+		Suppose we have data set with two variables in which Y is the dependent variable, X is the group of the dependent variable and nonlinear function R indicates the presence or absence of Y with R=1 (missingness)
+		and R=0(non-missingness). If the probability of missingness depends purely on the observed variables 𝑋, the data are MAR.
+		
+		𝑃 (𝑅 = 1 | 𝑌, 𝑋) = (𝑅 = 1 | 𝑋)
+		
+		We use the repair data set technique to identify issues in fairness using a different pattern of missingness as described. AIF360 library is used to remove the dependency of one variable that gives unbiased results
+		so that algorithm called Adversarial debasing.  AIF360 library belongs to the python package for accurate results in machine learning involving multiple imputations techniques to fill out missing data. In the mean
+		imputation technique, the missing value is filled with the mean of the non-missing value in a similar column. AIF360 also offers a K-nearest neighbor (KNN) algorithm of supervised learning in which the missing value
+		is filled with the average of the K-nearest non-missing value in the same column.  For fairness notions, the data set is divided into training data and test data. Training data set develop relationships between
+		variable and test data is used to bring fairness to results. One-hot encoding (OHE) from the scalar library is applied for the categorical variables in the training data and may be utilized for different ideas of fairness.
+		
+		we cover the meaning of each fairness notion more in the <a href="/methods.html">relevant methods supbage</a>.<br>
 	</p>
 
 	<h3>
