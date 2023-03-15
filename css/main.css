@@ -67,11 +67,7 @@ a.button {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     padding-inline: 5px;
 }
-.tagline{
-  font-size: 25px;
-  width: 1200px;
-  float:left;
-}
+
 .header{
   background-color: #C1EFFF;
    width: 100%; 
