@@ -68,9 +68,9 @@ a.button {
     padding-inline: 5px;
 }
 .header {
-  padding: 60px;
+  padding: 120px;
   text-align: center;
   background: #1abc9c;
   color: white;
-  font-size: 30px;
+  font-size: 10px;
 }
