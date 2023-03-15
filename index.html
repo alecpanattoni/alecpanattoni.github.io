@@ -113,7 +113,15 @@ title: Missingness' Effect on Fairness
 		now a chance that our model becomes more unfair and potentially inaccurate. It is also possible for the results to be more fair/accurate for any of
 		these missingness types, but very unlikely. 
 		<br>
-		For MCAR, we see similar results 
+		As we begin to introduce missingness such as NMAR, MAR and MCAR, we begin to see a difference in the measurements of fairness. To begin with, all of our 
+		fairness measurements increase slightly, meaning that the missing data is finally having a effect on measuring the fairness of the dataset. While NMAR 
+		seems to not really have a significant different fairness measurement from the dataset with no missing data, the fairness values increase more with MCAR. 
+		Last but not least, MAR seems to perform the poorest out of all the types of missingness. While the accuracy for MAR deacreases, all of the statistical parity,
+		equality of odds and equality of opportunity increases, indicating a poor performance in fairness. From what we have learned, we might see why the fairness measures 
+		decrease for MAR. Because Missing at Random depends on other columns than the column with the missing values itself, unless we know the reasoning behind why the missing values 
+		were chosen, it might be hard to determine why the values are missing. Therefore, it will perform poorly on determining fairness. 
+ 
+		
 		
 	</p>
 
