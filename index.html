@@ -87,7 +87,14 @@ title: Missingness' Effect on Fairness
 		
 		Our dataset is synthetic because we take the original dataset and 
 		simulate our own distribution of missingness. The process by which this works is that we use statistical representations of types of missingness in order 
-		to select which observations to "drop" from the dataset. As a result, we end up with a dataset that has certain values missing, and those are determined
+		to select which observations to "drop" from the dataset. Dropping missing data is not ideal, since best practice is to handle each type of missingness differently. 
+		Since we don't know what kinds of biases exist in the data, we can not be sure that any form of handling missingness will handle it properly. While 
+		we could handle the missingness in multiple ways and compare the results, the results could prove to be different for each way the missingness is handled. 
+		This could get out of hand since we just want to focus on how fairness notions and accuracies are different amongst the different types of missingness. 
+		For this reason, we have to choose one way of handling missingness and stick to it. Although it may skew the distribution of our data in some way, 
+		we will drop all tuples that contain the missing attribute for each type of missingness. This seems to be the best option since imputing violates NMAR 
+		best practices (although dropping tuples does violate MAR best practices). To put it another way, we feel that dropping missing tuples will skew the 
+		data less than imputing the data potentially would. After all, we end up with a dataset that has certain values missing, and those are determined
 		by a pattern we decide. More specifically, the complainant age attribute was chosen to contain missingness. This attribute was chosen for two reasons. 
 		The first is that the chosen missing attribute must be highly correlated with the chosen sensitive attribute and the label outcome attribute. This is
 		because we don't want to alter the extremely delicate attributes that are the sensitive and label outcome attributes. This is also important because when
