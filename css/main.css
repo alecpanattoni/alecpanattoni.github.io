@@ -1,5 +1,5 @@
 body {
-    margin: 60px auto;
+    margin: 0;
     width: 70%;
     background-color: #e0fdff
 }
@@ -53,7 +53,7 @@ ul.posts li {
 
 .text {
     color: #333;
-    font-size: 1.5em;
+    font-size: 1.3em;
     line-height: 1.4em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
@@ -76,7 +76,7 @@ header h1 {
   background-clip: text;
   -webkit-background-clip: text;
 }
-
 header{
-    background-color:#2B65EC; 
+background-color: #FFFFFF;
 }
+
