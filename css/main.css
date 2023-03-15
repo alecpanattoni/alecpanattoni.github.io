@@ -1,12 +1,9 @@
 body {
-    margin: 0;
+    margin: 60px auto;
     width: 100%;
     background-color: #e0fdff
 }
-table {
-margin:60px;
 
-}
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     padding: 0px;
@@ -80,7 +77,5 @@ header h1 {
   background-clip: text;
   -webkit-background-clip: text;
 }
-header{
-background-color: #FFFFFF;
-}
+
 
