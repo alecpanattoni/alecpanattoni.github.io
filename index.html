@@ -98,29 +98,38 @@ title: Missingness' Effect on Fairness
 
 	<p class="text">
 		Missingness in machine learning data sets is common and there are several types of missingness, describing Missing Completely at Random (MCAR), Not Missing at Random (NMAR), and Missing at Random (MAR).
-		
+		<br>
+		<br>
 		MCAR: Missingness of data in MCAR is completely independent of both observed and unobserved data. Suppose X represents a randomized variable and R represents the binary random process which gives information
 		about missingness and non-missingness of data with R=1 (missingness) and R=0 (non-missingness). Joint probability distribution of 𝑋 and 𝑅 as:
 		<br>
+		<br>
 		𝑃 (𝑋 = 𝑥, 𝑅 = 𝑟) = 𝑃(𝑋 = 𝑥 | 𝑅 = 𝑟) 𝑃(𝑅 = 𝑟)
+		<br>
 		<br>
 		NMAR: Missingness of data in NMAR depends upon overlooked values of the unobserved variable and is independent of the observed data set so observed data is not capable to estimate probability distribution.
 		Correlation between observed and missing data can help to estimate conditional distribution. Suppose Y indicates a key variable, R represents the binary random process that gives information about the missingness
 		and non-missingness of Y with R=1 (missingness) and R=0 (non-missingness) and X represents observed variables relating to Y and R. Joint probability distribution of 𝑌, 𝑋, and 𝑅 is given below:
 		<br>
+		<br>
 		𝑃(𝑌 = 𝑦, 𝑋 = 𝑥, 𝑅 = 𝑟) = 𝑃(𝑌 = 𝑦 | 𝑋 = 𝑥, 𝑅 = 𝑟) 𝑃(𝑋 = 𝑥, 𝑅 = 𝑟)
 		<br>
+		<br>
 		Calculated conditional distribution is performed to fill out the missing values in the data set.
+		<br>
 		<br>
 		MAR: Missingness of data in MAR depends upon the variable that is included in a data set. The missingness of the variable is more dependent on the significance of the variable as compared to the variable value.
 		Suppose we have data set with two variables in which Y is the dependent variable, X is the group of the dependent variable and nonlinear function R indicates the presence or absence of Y with R=1 (missingness)
 		and R=0(non-missingness). If the probability of missingness depends purely on the observed variables 𝑋, the data are MAR.
 		<br>
+		<br>
 		𝑃 (𝑅 = 1 | 𝑌, 𝑋) = (𝑅 = 1 | 𝑋)
+		<br>
 		<br>
 		We use the repair data set technique to identify issues in fairness using a different pattern of missingness as described. AIF360 library is used to remove the dependency of one variable that gives unbiased results
 		so that algorithm called Adversarial debasing.  For fairness notions, the data set is divided into training data and test data. Training data set develop relationships between variable and test data is used to bring
 		fairness to results. One-hot encoding (OHE) from the scalar library is applied for the categorical variables in the training data and may be utilized for different ideas of fairness.
+		<br>
 		<br>
 		we cover the meaning of each fairness notion more in the <a href="/methods.html">relevant methods supbage</a>.<br>
 	</p>
