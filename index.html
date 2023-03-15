@@ -155,6 +155,25 @@ title: Missingness' Effect on Fairness
 		in fairness. Since we are using Adversarial Debiasing for our fairness intervention technique (see Methods in-depth page), the accuracies amongst the
 		four datasets hardly change at all.
 		<br>
+		Based on our results, for each fairness notion. MAR performed the worst, MCAR performed the second worst, and NMAR performed the best in terms of our chosen
+		fairness notions. It is first important to mention that all types of missingness (including no missingness at all) had very similar accuracies. This is
+		expected since Adversarial Debiasing, our in-processing fairness intervention technique (which also served as our classifier) within our model maximizes
+		accuracy while improving fairness as much as possible. Since it does this using a CNN, in each case, loss (which includes fairness notions considered
+		within AIF360’s Adversarial Debiasing method) was minimized with the accuracy being around 76%. The CNN had determined that without significantly decreasing
+		the accuracy to slightly increase bias (unworthy tradeoff), it would be best to keep the accuracy around here in each case. This does not bother us, as the
+		data scientists, since we are more focused on how missingness affects our fairness notions. While accuracy is certainly always important to consider as well,
+		we are happy with the accuracy being where it is, being that over ¾ of predictions made by the classifier are correct. Now we can focus on reasoning for why
+		each missingness type’s fairness notions results look the way they do. Our results matched our logical expectations that we came up with at the beginning of
+		the project. A pattern of missingness would noticeably affect fairness in a situation where the missingness is dependent on a sensitive attribute; that
+		indicates that a pattern such as MAR, which depends on a different attribute, would likely be the one to cause the most bias in the dataset. Our data supports
+		this, with MAR consistently being the type of missingness to cause the highest divergence from 0 across fairness notions. We also spotted MCAR to behave similarly,
+		which can be explained by the random distribution of missing data across the dataset, thus causing the sensitive attributes to lose points in a random pattern
+		at the same rate as non-sensitive attributes; the fact that sensitive attributes lose points is what determines fairness, so the results for MCAR are consistent
+		with our intuition. In conclusion, types of missingness that depend on randomness (MCAR and MAR) are the ones that caused the most bias. With regards to fairness,
+		one should generally be most concerned with how MAR affects biases. This is because a non-sensitive attribute can be dependent on a sensitive attribute’s outcome,
+		which inherently would contain the most bias. MCAR should not be much of one’s concern, since its patterns can be explained completely by randomness. NMAR also
+		should generally not influence the outcome much, assuming it is not a sensitive attribute; although it still should be handled with care. 
+
  
 		
 		
